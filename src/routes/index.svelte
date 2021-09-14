@@ -1,24 +1,15 @@
 <script>
 	import { onMount } from 'svelte';
+  import kwesforms from 'kwesforms';
   import '../styles/global.css'
   import Footer from '../components/footer.svelte';
   import ProjectItem from '../components/projectItem.svelte';
-  let contactForm
+  
   onMount(()=>{
-    console.log(contactForm)
-  contactForm.addEventListener("submit", handleSubmit);
+    kwesforms.init();
+    
   })
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    let myForm = contactForm
-    let formData = new FormData(myForm)
-    fetch('/', {
-      method: 'POST',
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString()
-    }).then(() => console.log('Form successfully submitted')).catch((error) =>
-      alert(error))
-  }
+
 
 </script>
 <style>
@@ -53,12 +44,12 @@ h1 {
 .text-center {
   text-align: center;
 }
-.contact-form {
+.inputs {
   display: flex;
   align-items: stretch;
   justify-content: center;
 }
-.contact-form > input {
+.inputs > input {
   min-width: 0;
   font-size: 16px;
   border: 1px solid rgb(216, 216, 216);
@@ -70,7 +61,7 @@ h1 {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.contact-form > button {
+.inputs > button {
   min-width: 0;
   font-size: 16px;
   border: 1px solid rgb(216, 216, 216);
@@ -128,10 +119,12 @@ h2 {
       <h1>more software ariving in 3-5 business days.</h1>
       <h2>currently writing lines of code.</h2>
       <h4>contact us and we'll get back to you</h4>
-      <form class="contact-form" name="ContactForm" method="post" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="ContactForm" />
-        <input name="email" type="email" placeholder="email address">
-        <button type="submit">contact us</button>
+      <form class="contact-form kwes-form" action="https://kwesforms.com/api/foreign/forms/UcZuyava9nuj0DnXULSX" >
+        <div class="inputs">
+          <input name="email" type="email" placeholder="email address">
+          <button type="submit">contact us</button>
+        </div>
+
       </form>
       
     </div>

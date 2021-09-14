@@ -110,8 +110,8 @@ h2 {
       <h1>more software ariving in 3-5 business days.</h1>
       <h2>currently writing lines of code.</h2>
       <h4>contact us and we'll get back to you</h4>
-      <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify >
-        <input type="email" placeholder="email address">
+      <form name="contactForm" method="POST" data-netlify="true" id="simple-contact-form" class="contact-form" >
+        <input name="email" type="email" placeholder="email address">
         <button>contact us</button>
       </form>
     </div>

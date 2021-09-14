@@ -35,6 +35,47 @@ h1 {
 .text-center {
   text-align: center;
 }
+.contact-form {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+.contact-form > input {
+  min-width: 0;
+  font-size: 16px;
+  border: 1px solid rgb(216, 216, 216);
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.contact-form > button {
+  min-width: 0;
+  font-size: 16px;
+  border: 1px solid rgb(216, 216, 216);
+  color: white;
+  font-weight: 700;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  background-color: rgb(35,39,42);
+  border-radius: 10px;
+
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+h4 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+h2 {
+  color: rgb(109, 109, 109);
+}
 /*
 .projects {
   display: flex;
@@ -68,6 +109,11 @@ h1 {
     <div class="hero--inner text-center">
       <h1>more software ariving in 3-5 business days.</h1>
       <h2>currently writing lines of code.</h2>
+      <h4>contact us and we'll get back to you</h4>
+      <form class="contact-form" name="contact" method="POST" data-netlify="true">
+        <input type="text" placeholder="email address">
+        <button>contact us</button>
+      </form>
     </div>
     <!--<div class="wrapper">
       <div class="projects-outer">
@@ -84,4 +130,5 @@ h1 {
 
   </div>
 </section>
+<span style="height: 5rem; width: 5rem; display: block"></span>
 <Footer />

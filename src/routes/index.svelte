@@ -1,7 +1,25 @@
 <script>
+	import { onMount } from 'svelte';
   import '../styles/global.css'
   import Footer from '../components/footer.svelte';
   import ProjectItem from '../components/projectItem.svelte';
+  let contactForm
+  onMount(()=>{
+    console.log(contactForm)
+  contactForm.addEventListener("submit", handleSubmit);
+  })
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    let myForm = contactForm
+    let formData = new FormData(myForm)
+    fetch('/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString()
+    }).then(() => console.log('Form successfully submitted')).catch((error) =>
+      alert(error))
+  }
+
 </script>
 <style>
 h1,h2 {
@@ -110,26 +128,11 @@ h2 {
       <h1>more software ariving in 3-5 business days.</h1>
       <h2>currently writing lines of code.</h2>
       <h4>contact us and we'll get back to you</h4>
-      <form class="contact-form" method="post" name="Contact Form" data-netlify="true">
+      <form class="contact-form" bind:this={contactForm} name="Contact Form">
         <input name="email" type="email" placeholder="email address">
         <button>contact us</button>
       </form>
-      <form name="test" method="post" netlify netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="test" />
-        <input type="text" name="bot-field" />
-        <p>
-            <label>Your Name: <input type="text" name="name" /></label>
-        </p>
-        <p>
-            <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-            <label>Message: <textarea name="message" /></label>
-        </p>
-        <p>
-            <button type="submit">Send</button>
-        </p>
-    </form>
+      
     </div>
     <!--<div class="wrapper">
       <div class="projects-outer">

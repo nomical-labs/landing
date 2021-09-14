@@ -130,7 +130,7 @@ h2 {
       <h4>contact us and we'll get back to you</h4>
       <form class="contact-form" bind:this={contactForm} name="Contact Form">
         <input name="email" type="email" placeholder="email address">
-        <button>contact us</button>
+        <button type="submit">contact us</button>
       </form>
       
     </div>

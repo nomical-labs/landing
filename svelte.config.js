@@ -1,3 +1,5 @@
+/** @type {import('@sveltejs/kit').Config} */
+
 const sveltePreprocess = require('svelte-preprocess')
 const netlify = require('@sveltejs/adapter-netlify')
 const pkg = require('./package.json')

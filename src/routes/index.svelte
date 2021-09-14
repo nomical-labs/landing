@@ -128,7 +128,7 @@ h2 {
       <h1>more software ariving in 3-5 business days.</h1>
       <h2>currently writing lines of code.</h2>
       <h4>contact us and we'll get back to you</h4>
-      <form class="contact-form" name="ContactForm" netlify netlify-honeypot="bot-field">
+      <form class="contact-form" name="ContactForm" method="post" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="ContactForm" />
         <input name="email" type="email" placeholder="email address">
         <button type="submit">contact us</button>

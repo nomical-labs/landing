@@ -30,6 +30,15 @@ h1 {
   text-align: left;
   padding: 4rem 20%;
 }
+
+/* Responsivenessness */
+@media only screen and (max-width: 700px) {
+  .hero--inner {
+    text-align: left;
+    padding: 4rem 1rem;
+  }
+}
+
 .headlogo {
   max-width: 6rem;
   margin: 1rem 0;
@@ -77,7 +86,15 @@ h1 {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-
+@media only screen and (max-width: 600px) {
+  .inputs > input, .inputs > button {
+    border-radius: 10px;
+    margin-bottom: 0.3rem;
+  }
+  .inputs {
+    flex-direction: column;
+  }
+}
 h4 {
   margin-top: 40px;
   margin-bottom: 10px;
@@ -121,7 +138,7 @@ h2 {
       <h4>contact us and we'll get back to you</h4>
       <form class="contact-form kwes-form" action="https://kwesforms.com/api/foreign/forms/UcZuyava9nuj0DnXULSX" >
         <div class="inputs">
-          <input name="email" type="email" placeholder="email address">
+          <input name="email" type="email" autocomplete="email" placeholder="email address">
           <button type="submit">contact us</button>
         </div>
 
